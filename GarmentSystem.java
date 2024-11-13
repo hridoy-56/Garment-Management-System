@@ -32,6 +32,18 @@ class Garment {
         double discount = price * (discountPercentage / 100);
         return discount;
     }
+    
+    void displayDetails() {
+        System.out.println("Garment:");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Description: " + description);
+        System.out.println("Size: " + size);
+        System.out.println("Color: " + color);
+        System.out.println("Price: " + price);
+        System.out.println("Stock Quantity: " + stockQuantity);
+
+    }
 }
 
 class Fabric {
@@ -137,7 +149,9 @@ public class GarmentSystem {
         Garment g1 = new Garment("M001", "Silk", "Good Product", "M", "Red", 1000.0, 20);
         Garment g2 = new Garment("N001", "Silk", "Good Product", "L", "Blue", 1050.0, 30);
         Garment g3 = new Garment("C001", "Silk", "Good Product", "XL", "Green", 1080.0, 40);
-        
+        g1.displayDetails();
+        g2.displayDetails();
+        g3.displayDetails();
        
         double x = g1.calculateDiscountPrice(10);
         System.out.println(x);
