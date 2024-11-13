@@ -134,10 +134,11 @@ class Inventory {
 public class GarmentSystem {
 
     public static void main(String[] args) {
-        Garment g1 = new Garment();
-        g1.name = "Silk";
-        g1.description = "Good Product";
-        g1.price = 600;
+        Garment g1 = new Garment("M001", "Silk", "Good Product", "M", "Red", 1000.0, 20);
+        Garment g2 = new Garment("N001", "Silk", "Good Product", "L", "Blue", 1050.0, 30);
+        Garment g3 = new Garment("C001", "Silk", "Good Product", "XL", "Green", 1080.0, 40);
+        
+       
         double x = g1.calculateDiscountPrice(10);
         System.out.println(x);
 
