@@ -13,7 +13,7 @@ class Garment {
     public String color;
     public double price;
     public int stockQuantity;
-    
+
     Garment(String id, String name, String description, String size, String color, double price, int stockQuantity) {
         this.id = id;
         this.name = name;
@@ -30,9 +30,10 @@ class Garment {
 
     double calculateDiscountPrice(double discountPercentage) {
         double discount = price * (discountPercentage / 100);
+        System.out.println("Discount :" + discount);
         return discount;
     }
-    
+
     void displayDetails() {
         System.out.println("Garment:");
         System.out.println("ID: " + id);
@@ -52,7 +53,7 @@ class Fabric {
     public String type;
     public String color;
     public double pricePerMeter;
-    
+
     Fabric(String id, String type, String color, double pricePerMeter) {
         this.id = id;
         this.type = type;
@@ -62,8 +63,20 @@ class Fabric {
 
     double calculateCost(double meters) {
         double newPrice = pricePerMeter * meters;
+        System.out.println("Cost:" + newPrice);
         return newPrice;
     }
+
+    void displayDetails() {
+        System.out.println("--------------------------");
+        System.out.println("Fabric: ");
+        System.out.println("Fabric ID: " + id);
+        System.out.println("Type: " + type);
+        System.out.println("Color: " + color);
+        System.out.println("Price per Meter: " + pricePerMeter);
+        System.out.println("--------------------------");
+    }
+
 }
 
 class Supplier {
@@ -159,7 +172,14 @@ public class GarmentSystem {
         g1.displayDetails();
         g2.displayDetails();
         g3.displayDetails();
-       
+
+        Fabric f1 = new Fabric("F001", "Cotton", "Blue", 50.0);
+        f1.displayDetails();
+        f1.calculateCost(5);
+        Fabric f2 = new Fabric("F002", "Cotton", "White", 80.0);
+        f2.displayDetails();
+        f2.calculateCost(10);
+
         double x = g1.calculateDiscountPrice(10);
         System.out.println(x);
 
